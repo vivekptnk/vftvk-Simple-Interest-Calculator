@@ -1,5 +1,6 @@
 function compute()
 {
+   
     var principal = document.getElementById("principal").value;
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
@@ -18,3 +19,22 @@ function updateRate(){
     document.getElementById("rate_val").innerText = rateVal;
 }
 
+function checkData(){
+      //Create references to the input elements we wish to validate
+      var principal = document.getElementById("principal");
+      
+
+      //Check if principal field is 0
+      if(principal.value == 0){
+            alert("Enter a positive number.");
+            principal.focus();
+            
+            return false;
+      }
+
+      
+
+     //If all is well return true.
+      compute();
+      return true;
+}
